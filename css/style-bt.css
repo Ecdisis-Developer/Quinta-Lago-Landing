@@ -71,7 +71,7 @@ header {
 .slide-1 {
     background-image:
         url('../imagenes/banners/text-tb-1.webp'),
-        url('../imagenes/banners/hombre-pelota.webp'),
+        url('../imagenes/banners/persona-1.webp'),
         url('../imagenes/banners/banner-teambuilding-1.webp'),
         url('../imagenes/banners/banner-1.webp');
     background-repeat:
@@ -94,7 +94,7 @@ header {
 .slide-2 {
     background-image:
         url('../imagenes/banners/text-tb-2.webp'),
-        url('../imagenes/banners/hombre-pelota.webp'),
+        url('../imagenes/banners/persona-2.webp'),
         url('../imagenes/banners/banner-teambuilding-2.webp'),
         url('../imagenes/banners/banner-2.webp');
     background-repeat:
@@ -117,7 +117,7 @@ header {
 .slide-3 {
     background-image:
         url('../imagenes/banners/text-tb-3.webp'),
-        url('../imagenes/banners/hombre-3.webp'),
+        url('../imagenes/banners/persona-3.webp'),
         url('../imagenes/banners/banner-teambuilding-3.webp'),
         url('../imagenes/banners/banner-3.webp');
     background-repeat:
@@ -137,20 +137,57 @@ header {
         80%;
 }
 
-.primer-contenedor{
-    padding: 50px 0 50px 0;
-}
-
-.primer-contenedor h1 {
+h1 {
     color: var(--principal);
     font-size: var(--titulo);
     text-align: center;
+    padding: 50px 0 50px 0;
 }
 
-.contenedor-texto {
+.primer-contenedor{
+    padding: 50px 0 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    gap: 0;
+    justify-content: center;
+}
+
+.pc-texto {
     text-align: center;
     font-size: 18px;
     font-weight: lighter;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 150px;
 }
 
+.circulo{
+    width: 4%;
+    padding: 10px 0;
+}
 
+iframe{
+    margin: 50px 0;
+}
+
+.pc-imagenes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.primera{
+    z-index: 0;
+}
+
+.segunda{
+    z-index: 1;
+    margin: -50px 300px 0 0;
+}
+
+.tercera{
+    z-index: 2;
+    margin: -50px -50px 0 0;
+}
