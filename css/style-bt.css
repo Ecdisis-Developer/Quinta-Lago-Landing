@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --principal: #2E2E2E;
+    --naranja: #F5764D;
+    --azul: #44C8EE;
+    --titulo: 40px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}
+
+.menu {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-style: 20px;
+}
+
+header {
+    width: 100%;
+    height: 800px;
+    /* Altura del banner */
+    overflow: hidden;
+    /* Fondo negro para contraste */
+}
+
+/* Contenedor del slider */
+.slider {
+    display: flex;
+    width: 300%;
+    /* 3 imágenes, así que 300% */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide */
+.slide {
+    width: 100%;
+}
+
+.slide-1 {
+    background-image:
+        url('../imagenes/banners/text-tb-1.webp'),
+        url('../imagenes/banners/hombre-pelota.webp'),
+        url('../imagenes/banners/banner-teambuilding-1.webp'),
+        url('../imagenes/banners/banner-1.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+
+.slide-2 {
+    background-image:
+        url('../imagenes/banners/text-tb-2.webp'),
+        url('../imagenes/banners/hombre-pelota.webp'),
+        url('../imagenes/banners/banner-teambuilding-2.webp'),
+        url('../imagenes/banners/banner-2.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+
+.slide-3 {
+    background-image:
+        url('../imagenes/banners/text-tb-3.webp'),
+        url('../imagenes/banners/hombre-3.webp'),
+        url('../imagenes/banners/banner-teambuilding-3.webp'),
+        url('../imagenes/banners/banner-3.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+
+.primer-contenedor{
+    padding: 50px 0 50px 0;
+}
+
+.primer-contenedor h1 {
+    color: var(--principal);
+    font-size: var(--titulo);
+    text-align: center;
+}
+
+.naranja {
+    color: var(--naranja);
+}
+
+.azul {
+    color: var(--azul);
+}
+p{
+    font-size: var(--titulo);
+}
