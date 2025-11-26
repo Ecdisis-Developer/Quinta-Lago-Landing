@@ -7,6 +7,19 @@
     --titulo: 40px;
 }
 
+.naranja {
+    color: var(--naranja);
+}
+
+.azul {
+    color: var(--azul);
+}
+
+.resaltado{
+    color: var(--principal);
+    font-weight: 500;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -134,13 +147,10 @@ header {
     text-align: center;
 }
 
-.naranja {
-    color: var(--naranja);
+.contenedor-texto {
+    text-align: center;
+    font-size: 18px;
+    font-weight: lighter;
 }
 
-.azul {
-    color: var(--azul);
-}
-p{
-    font-size: var(--titulo);
-}
+
