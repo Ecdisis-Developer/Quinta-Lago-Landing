@@ -4,7 +4,9 @@
     --principal: #2E2E2E;
     --naranja: #F5764D;
     --azul: #44C8EE;
+    --blanco: #ffffff;
     --titulo: 40px;
+    --texto-general: 18px;
 }
 
 .naranja {
@@ -43,22 +45,19 @@ nav {
     text-decoration: none;
     color: black;
     font-weight: 500;
-    font-style: 20px;
+    font-size: var(--texto-general)
 }
 
 header {
     width: 100%;
     height: 800px;
-    /* Altura del banner */
     overflow: hidden;
-    /* Fondo negro para contraste */
 }
 
 /* Contenedor del slider */
 .slider {
     display: flex;
-    width: 300%;
-    /* 3 imágenes, así que 300% */
+    width: 300%; /* 3 imágenes, así que 300% */
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
@@ -137,7 +136,7 @@ header {
         80%;
 }
 
-h1 {
+.primer-h1 {
     color: var(--principal);
     font-size: var(--titulo);
     text-align: center;
@@ -145,7 +144,10 @@ h1 {
 }
 
 .primer-contenedor{
-    padding: 50px 0 50px 0;
+    background-image: url('../imagenes/fondo.webp');
+    background-repeat: no-repeat;
+    background-position: calc(50% - 30px) -90%;
+    padding: 50px 0 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
     gap: 0;
@@ -154,7 +156,7 @@ h1 {
 
 .pc-texto {
     text-align: center;
-    font-size: 18px;
+    font-size: var(--texto-general);
     font-weight: lighter;
     display: flex;
     align-items: center;
@@ -162,13 +164,20 @@ h1 {
     padding-left: 150px;
 }
 
-.circulo{
+.circulo-pequeño{
     width: 4%;
     padding: 10px 0;
 }
 
 iframe{
     margin: 50px 0;
+}
+
+.segundo-h1 {
+    color: var(--principal);
+    font-size: var(--titulo);
+    text-align: center;
+    padding: 50px 0 0 0;
 }
 
 .pc-imagenes {
@@ -190,4 +199,48 @@ iframe{
 .tercera{
     z-index: 2;
     margin: -50px -50px 0 0;
+}
+
+.contenedor-circulos-iconos{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+}
+
+.cont-azul {
+    background-color: var(--azul);
+    border-radius: 100%;
+    width: 15%;
+    height: 300px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.5;
+    margin-right: -50px;
+}
+
+.cont-azul h3{
+    color: var(--blanco);
+    font-size: var(--texto-general);
+}
+
+.cont-naranja{
+    background-color: var(--naranja);
+    border-radius: 100%;
+    width: 15%;
+    height: 300px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    opacity: 0.8;
+    margin-right: -50px;
+}
+
+.cont-naranja h3{
+    color: var(--blanco);
+    font-size: var(--texto-general);
 }
