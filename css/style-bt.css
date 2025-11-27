@@ -244,3 +244,37 @@ iframe{
     color: var(--blanco);
     font-size: var(--texto-general);
 }
+
+.segundo-contenedor{
+    
+    text-align: center;
+}
+
+.sub-contenedor{
+    background-image: 
+    url('../imagenes/circulos/circulo-azul-mediano.webp'),
+    url('../imagenes/circulos/circulo-negro-grande.webp'),
+    url('../imagenes/circulos/circulo-naranja-mediano.webp');
+    background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat;
+    background-position: 
+    calc(20% - 20px) 350px,
+    25% center,
+    10% center;    
+    background-size:
+    15%,
+    30%,
+    30%;
+
+    padding: 50px 0 50px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    gap: 0;
+} 
+
+.texto-circulos-grandes{
+    color: var(--blanco);
+    font-size: 80px;
+}
