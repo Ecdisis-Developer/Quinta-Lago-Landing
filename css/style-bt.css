@@ -19,7 +19,7 @@
     color: var(--azul);
 }
 
-.resaltado{
+.resaltado {
     color: var(--principal);
     font-weight: 500;
 }
@@ -59,7 +59,8 @@ header {
 /* Contenedor del slider */
 .slider {
     display: flex;
-    width: 300%; /* 3 imágenes, así que 300% */
+    width: 300%;
+    /* 3 imágenes, así que 300% */
     height: 100%;
     transition: transform 0.5s ease-in-out;
     padding-bottom: 1500px;
@@ -145,29 +146,30 @@ h1 {
     text-align: center;
 }
 
-.primer-contenedor{
+.primer-contenedor {
     padding-top: 30px;
 }
 
-.contenedor-principal{
-    background-image: 
-    url('../imagenes/fondo.webp'),
-    url('../imagenes/circulos/circulo-azul-mediano.webp'),
-    url('../imagenes/circulos/circulo-blanco-grande.webp');
-    background-repeat: 
-    no-repeat,
-    no-repeat,
-    no-repeat;
-    background-position: 
-    calc(50% - 30%) -90%,
-    calc(20% - 5%) 58%,
-    calc(50% - 10%) 30%;
+.contenedor-principal {
+    background-image:
+        url('../imagenes/fondo.webp'),
+        url('../imagenes/circulos/circulo-azul-mediano.webp'),
+        url('../imagenes/circulos/circulo-blanco-grande.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        calc(50% - 30%) -90%,
+        calc(20% - 5%) 58%,
+        calc(50% - 10%) 30%;
     background-size:
-    auto,
-    15%,
-    14%;
+        auto,
+        15%,
+        14%;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    grid-template-columns: 1fr 1fr;
+    /* 2 columnas del mismo tamaño */
     gap: 0;
     justify-content: center;
 }
@@ -179,18 +181,18 @@ h1 {
     transform: translateX(100px);
 }
 
-.pc-texto p{
-     text-align: center;
+.pc-texto p {
+    text-align: center;
     font-size: var(--texto-general);
     font-weight: lighter;
 }
 
-.circulo-pequeño{
+.circulo-pequeño {
     width: 4%;
     padding: 10px 0;
 }
 
-iframe{
+iframe {
     background-position: calc(20% - 50%) 500px;
     margin: 50px 0;
 }
@@ -213,21 +215,21 @@ iframe{
     transform: translateX(-100px);
 }
 
-.primera{
+.primera {
     z-index: 0;
 }
 
-.segunda{
+.segunda {
     z-index: 1;
     margin: -50px 300px 0 0;
 }
 
-.tercera{
+.tercera {
     z-index: 2;
     margin: -50px -50px 0 0;
 }
 
-.contenedor-circulos-iconos{
+.contenedor-circulos-iconos {
     display: flex;
     justify-content: center;
     padding: 20px 0 20px 0;
@@ -247,12 +249,12 @@ iframe{
     margin-right: -50px;
 }
 
-.cont-azul h3{
+.cont-azul h3 {
     color: var(--blanco);
     font-size: var(--h3);
 }
 
-.cont-naranja{
+.cont-naranja {
     background-color: var(--naranja);
     border-radius: 100%;
     width: 15%;
@@ -266,12 +268,12 @@ iframe{
     margin-right: -50px;
 }
 
-.cont-naranja h3{
+.cont-naranja h3 {
     color: var(--blanco);
     font-size: var(--h3);
 }
 
-.segundo-contenedor{
+.segundo-contenedor {
     background-image: url('../imagenes/fondo.webp');
     background-repeat: no-repeat;
     background-position: 50px center;
@@ -279,83 +281,85 @@ iframe{
     text-align: center;
 }
 
-.segundo-contenedor p{
+.segundo-contenedor p {
     font-size: var(--texto-general);
 }
 
-.sub-contenedor{
+.sub-contenedor {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    grid-template-columns: 1fr 1fr;
+    /* 2 columnas del mismo tamaño */
     gap: 0;
     justify-content: center;
     align-items: center;
-} 
+}
 
-.cont-izq p{
+.cont-izq p {
     transform: translateX(100px);
 }
 
-.cont-izq{
+.cont-izq {
     font-size: var(--texto-general);
 }
 
-.texto-circulos{
-    background-image: 
-    url('../imagenes/circulos/circulo-azul-mediano.webp'),
-    url('../imagenes/circulos/circulo-negro-grande.webp'),
-    url('../imagenes/circulos/circulo-naranja-mediano.webp');
+.texto-circulos {
+    background-image:
+        url('../imagenes/circulos/circulo-azul-mediano.webp'),
+        url('../imagenes/circulos/circulo-negro-grande.webp'),
+        url('../imagenes/circulos/circulo-naranja-mediano.webp');
     background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat;
-    background-position: 
-    calc(50% - 50px) 320px,
-    85% center,
-    25% center;    
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        calc(50% - 50px) 320px,
+        85% center,
+        25% center;
     background-size:
-    30%,
-    60%,
-    55%;
+        30%,
+        60%,
+        55%;
     padding: 80px 0 80px 0;
 }
 
-.texto-circulos h1{
+.texto-circulos h1 {
     color: var(--blanco);
     font-size: 100px;
     line-height: 1;
 }
 
-.cont-der{
+.cont-der {
     transform: translateX(-100px);
 }
 
-.cont-der p{
+.cont-der p {
     font-size: var(--texto-general);
 }
 
-.cont-imagenes-der{
-    background-image: 
-    url('../imagenes/circulos/circulo-azul-grande.webp'),
-    url('../imagenes/circulos/circulo-blanco-chico.webp');
-    background-repeat: 
-    no-repeat,
-    no-repeat;
-    background-position: 
-    calc(20% - -45%) 90%,
-    calc(10% - -10%) 0;
-    background-size: 
-    50%,
-    8%;
+.cont-imagenes-der {
+    background-image:
+        url('../imagenes/circulos/circulo-azul-grande.webp'),
+        url('../imagenes/circulos/circulo-blanco-chico.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat;
+    background-position:
+        calc(20% - -45%) 90%,
+        calc(10% - -10%) 0;
+    background-size:
+        50%,
+        8%;
     padding-bottom: 100px;
-} 
+}
 
-.imagenV2{
+.imagenV2 {
     margin: 0 0 80px 20px;
 }
 
-.contenedor-metodologia-integral{
+.contenedor-metodologia-integral {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* ejemplo */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* ejemplo */
     gap: 0px;
 }
 
@@ -366,19 +370,19 @@ iframe{
     padding: 50px 0 0 0;
 }*/
 
-.tercer-contenedor{
+.tercer-contenedor {
     padding-bottom: 150px;
 }
 
-.tercer-contenedor p{
-    font-size: var(--texto-general);   
+.tercer-contenedor p {
+    font-size: var(--texto-general);
 }
 
-.contenedor-uno{
+.contenedor-uno {
     margin-left: 45%;
 }
 
-.contenedor-uno h2{
+.contenedor-uno h2 {
     border-radius: 100%;
     background-color: var(--naranja);
     text-align: center;
@@ -386,11 +390,11 @@ iframe{
     color: var(--blanco);
     font-size: var(--h2);
     font-weight: 600;
-    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     margin: 100px 0 0 0;
 }
 
-.contenedor-uno h3{
+.contenedor-uno h3 {
     background-color: var(--azul);
     color: var(--blanco);
     border-radius: 20px;
@@ -399,21 +403,21 @@ iframe{
     font-size: var(--h3);
 }
 
-.contenedor-uno p{
+.contenedor-uno p {
     font-size: 15px;
 }
 
-.contenedor-dos{
+.contenedor-dos {
     background-image: url('../imagenes/imagen-teambuilding-7.webp');
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 0 0 40px 20px;
 }
 
-.contenedor-dos h2{
+.contenedor-dos h2 {
     border-radius: 100%;
     background-color: var(--naranja);
     text-align: center;
@@ -421,11 +425,11 @@ iframe{
     color: var(--blanco);
     font-size: var(--h2);
     font-weight: 600;
-    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     margin: 0 0 20px 0;
 }
 
-.contenedor-dos h3{
+.contenedor-dos h3 {
     background-color: var(--azul);
     color: var(--blanco);
     border-radius: 20px;
@@ -436,7 +440,7 @@ iframe{
     z-index: 1;
 }
 
-.contenedor-dos p{
+.contenedor-dos p {
     background-color: var(--blanco);
     font-size: 15px;
     border-radius: 100px;
@@ -445,16 +449,16 @@ iframe{
     z-index: 0;
 }
 
-.contenedor-tres{
+.contenedor-tres {
     margin-right: 40%;
     margin-left: 5%;
 }
 
-.contenedor-tres img{
+.contenedor-tres img {
     z-index: 0;
 }
 
-.contenedor-tres h2{
+.contenedor-tres h2 {
     border-radius: 100%;
     background-color: var(--naranja);
     text-align: center;
@@ -462,13 +466,13 @@ iframe{
     color: var(--blanco);
     font-size: var(--h2);
     font-weight: 600;
-    box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     margin: -5% 0 0 1%;
     z-index: 1;
     position: absolute;
 }
 
-.contenedor-tres h3{
+.contenedor-tres h3 {
     background-color: var(--azul);
     color: var(--blanco);
     border-radius: 20px;
@@ -477,32 +481,370 @@ iframe{
     font-size: var(--h3);
 }
 
-.contenedor-tres p{
+.contenedor-tres p {
     font-size: 15px;
 }
 
-.cuarto-contenedor{
+.cuarto-contenedor {
     background-image: url('../imagenes/banner.webp');
     background-repeat: no-repeat;
     display: grid;
-    grid-template-columns: 1fr 40fr 1fr; /* ejemplo */
-    
+    grid-template-columns: 1fr 40fr 1fr;
+    /* ejemplo */
+
 }
 
-.texto-banner{
+.texto-banner {
     margin: 100px 0 0 0;
 }
 
-.texto-banner  h1{
+.texto-banner h1 {
     text-align: center;
     color: var(--blanco);
     font-size: var(--h1);
 }
 
-.imagen-pan{
+.imagen-pan {
     margin: -100px 0 0 0;
 }
 
-.imagen-reconocimiento{
+.imagen-reconocimiento {
     margin: 0 0 100px 0;
+}
+
+.contenedor-carrusel-qlt {
+    text-align: center;
+}
+
+.contenedor-carrusel-qlt h2 {
+    font-size: var(--h2);
+    margin: 0 55% -1% 0;
+}
+
+.contenedor-carrusel-qlt h1 {
+    font-size: 100px;
+    margin: 0 0 0 0;
+}
+
+.cont-carr {
+    display: grid;
+    grid-template-columns: 1fr 40fr 1fr;
+    /* ejemplo */
+}
+
+.cc-izq {
+    margin: 100px 0 0 0;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    /* Ancho máximo para el layout */
+    height: 450px;
+    /* Ajusta la altura si los textos son muy largos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    /* Espacio para el título principal */
+}
+
+/* Estilo base de cada ítem (los círculos de imagen y su contenedor de texto) */
+.carousel-wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    /* Por defecto ocultamos los que no sean active/prev/next */
+    z-index: 0;
+    text-align: center;
+}
+
+.carousel-item {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* Para que la imagen respete el círculo */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    /* Necesario para el pseudo-elemento ::after */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- CAPA DE COLOR (El filtro naranja/rojo) --- */
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.7), rgba(255, 140, 0, 0.7));
+    border-radius: 50%;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    /* Por defecto tienen color */
+    pointer-events: none;
+    /* Permite interactuar con la imagen si fuera necesario */
+}
+
+/* Texto debajo de las imágenes laterales */
+.carousel-text {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+    max-width: 200px;
+    /* Limita el ancho del texto */
+    line-height: 1.4;
+    display: none;
+    /* Oculto por defecto */
+}
+
+/* --- ESTADOS DEL CARRUSEL --- */
+
+/* 1. Ítem Activo (Centro) */
+.carousel-wrapper.active {
+    opacity: 1;
+    z-index: 10;
+    transform: translateX(0) scale(1.3);
+    /* Más grande */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* Centrado absoluto */
+    pointer-events: auto;
+    /* Permite clics si el círculo central fuera un enlace */
+}
+
+.carousel-wrapper.active .carousel-item {
+    border: 8px solid #ff6b35;
+    /* El borde naranja grueso */
+}
+
+/* Al activo le quitamos el filtro de color y ocultamos el texto */
+.carousel-wrapper.active .carousel-item::after {
+    opacity: 0;
+}
+
+.carousel-wrapper.active .carousel-text {
+    display: none;
+}
+
+/* 2. Ítem Anterior (Izquierda) */
+.carousel-wrapper.prev {
+    opacity: 1;
+    z-index: 5;
+    transform: translateX(-140%) scale(0.9);
+    /* Hacia la izquierda y un poco más pequeño */
+    left: 50%;
+    /* Referencia desde el centro */
+    pointer-events: auto;
+}
+
+.carousel-wrapper.prev .carousel-text {
+    display: block;
+    /* Muestra el texto */
+}
+
+/* 3. Ítem Siguiente (Derecha) */
+.carousel-wrapper.next {
+    opacity: 1;
+    z-index: 5;
+    transform: translateX(40%) scale(0.9);
+    /* Hacia la derecha y un poco más pequeño */
+    left: 50%;
+    pointer-events: auto;
+}
+
+.carousel-wrapper.next .carousel-text {
+    display: block;
+    /* Muestra el texto */
+}
+
+/* --- BOTONES DE NAVEGACIÓN --- */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #00c2ff;
+    /* El azul cian de la imagen */
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    /* Bordes redondeados pero cuadrados */
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background-color: #0099cc;
+}
+
+.nav-btn.prev-btn {
+    left: 18%;
+    /* Ajusta esta posición para que quede entre el centro y la izq */
+}
+
+.nav-btn.next-btn {
+    right: 18%;
+    /* Ajusta esta posición para que quede entre el centro y la der */
+}
+
+/* Ajustes Responsive */
+@media (max-width: 992px) {
+    .carousel-item {
+        width: 200px;
+        height: 200px;
+    }
+
+    .carousel-wrapper.active {
+        transform: translateX(0) scale(1.2);
+    }
+
+    .carousel-wrapper.prev {
+        transform: translateX(-120%) scale(0.8);
+    }
+
+    .carousel-wrapper.next {
+        transform: translateX(20%) scale(0.8);
+    }
+
+    .nav-btn.prev-btn {
+        left: 10%;
+    }
+
+    .nav-btn.next-btn {
+        right: 10%;
+    }
+
+    .carousel-text {
+        font-size: 0.9rem;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        width: 150px;
+        height: 150px;
+    }
+
+    .carousel-wrapper.active {
+        transform: translateX(0) scale(1.1);
+    }
+
+    .carousel-wrapper.prev {
+        transform: translateX(-100%) scale(0.7);
+    }
+
+    .carousel-wrapper.next {
+        transform: translateX(0%) scale(0.7);
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .nav-btn.prev-btn {
+        left: 5%;
+    }
+
+    .nav-btn.next-btn {
+        right: 5%;
+    }
+
+    .carousel-text {
+        font-size: 0.8rem;
+        max-width: 150px;
+        margin-top: 10px;
+    }
+
+    .main-title {
+        font-size: 1.3rem;
+    }
+
+    .carousel-container {
+        height: 350px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-container {
+        height: 300px;
+    }
+
+    .carousel-item {
+        width: 120px;
+        height: 120px;
+    }
+
+    .carousel-wrapper.active {
+        transform: translateX(0) scale(1.0);
+    }
+
+    /* El central puede ser más pequeño */
+    .carousel-wrapper.prev {
+        transform: translateX(-80%) scale(0.6);
+    }
+
+    .carousel-wrapper.next {
+        transform: translateX(-20%) scale(0.6);
+    }
+
+    /* Ajuste para que se vea en pantallas pequeñas */
+    .nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .nav-btn.prev-btn {
+        left: 0%;
+    }
+
+    .nav-btn.next-btn {
+        right: 0%;
+    }
+
+    .carousel-text {
+        display: none !important;
+    }
+
+    /* Ocultar texto en móviles muy pequeños */
+    .main-title {
+        font-size: 1.1rem;
+    }
+}
+
+.cc-der {
+    margin: -200px 0 0 0;
+}
+
+
+.contenedor-clientes{
+    font-size: var(--h1);
 }
