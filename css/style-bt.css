@@ -161,7 +161,7 @@ header {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-left: 150px;
+    transform: translateX(100px);
 }
 
 .circulo-pequeño{
@@ -185,6 +185,7 @@ iframe{
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    transform: translateX(-100px);
 }
 
 .primera{
@@ -246,11 +247,26 @@ iframe{
 }
 
 .segundo-contenedor{
-    
+    background-image: url('../imagenes/fondo.webp');
+    background-repeat: no-repeat;
+    background-position: 50px center;
+    padding: 50px 0 0 0;
     text-align: center;
 }
 
 .sub-contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+} 
+
+.cont-izq{
+    transform: translateX(100px);
+}
+
+.texto-circulos{
     background-image: 
     url('../imagenes/circulos/circulo-azul-mediano.webp'),
     url('../imagenes/circulos/circulo-negro-grande.webp'),
@@ -260,21 +276,33 @@ iframe{
     no-repeat,
     no-repeat;
     background-position: 
-    calc(20% - 20px) 350px,
-    25% center,
-    10% center;    
+    calc(50% - 50px) 320px,
+    85% center,
+    25% center;    
     background-size:
-    15%,
     30%,
-    30%;
+    60%,
+    55%;
+    padding: 80px 0 80px 0;
+}
 
-    padding: 50px 0 50px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columnas del mismo tamaño */
-    gap: 0;
+.texto-circulos h1{
+    color: var(--blanco);
+    font-size: 100px;
+    line-height: 1;
+}
+
+.cont-imagenes-der{
+    background-image: url('../imagenes/circulos/circulo-azul-grande.webp');
+    background-repeat: no-repeat;
+    background-position: calc(20% - -45%) 150%;
+    background-size: 50%;
 } 
 
-.texto-circulos-grandes{
-    color: var(--blanco);
-    font-size: 80px;
+.imagenV2{
+    margin: 0 0 80px 20px;
+}
+
+.cont-der{
+    transform: translateX(-100px);
 }
