@@ -181,6 +181,9 @@ iframe{
 }
 
 .pc-imagenes {
+    background-image: url('../imagenes/fondo-circulos-de-colores.webp');
+    background-repeat: no-repeat;
+    background-position: top center;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -293,10 +296,18 @@ iframe{
 }
 
 .cont-imagenes-der{
-    background-image: url('../imagenes/circulos/circulo-azul-grande.webp');
-    background-repeat: no-repeat;
-    background-position: calc(20% - -45%) 150%;
-    background-size: 50%;
+    background-image: 
+    url('../imagenes/circulos/circulo-azul-grande.webp'),
+    url('../imagenes/circulos/circulo-blanco-chico.webp');
+    background-repeat: 
+    no-repeat,
+    no-repeat;
+    background-position: 
+    calc(20% - -45%) 150%,
+    calc(10% - -10%) 0;
+    background-size: 
+    50%,
+    8%;
 } 
 
 .imagenV2{
