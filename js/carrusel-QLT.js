@@ -1,32 +1,32 @@
- const wrappers = document.querySelectorAll('.carousel-wrapper');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        
-        let currentIndex = 0;
+const wrappers = document.querySelectorAll(".carousel-wrapper");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
 
-        function updateCarousel() {
-            wrappers.forEach(wrapper => {
-                wrapper.classList.remove('active', 'prev', 'next');
-            });
+let currentIndex = 0;
 
-            const totalItems = wrappers.length;
-            const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
-            const nextIndex = (currentIndex + 1) % totalItems;
+function updateCarousel() {
+  wrappers.forEach((wrapper) => {
+    wrapper.classList.remove("active", "prev", "next");
+  });
 
-            wrappers[currentIndex].classList.add('active');
-            wrappers[prevIndex].classList.add('prev');
-            wrappers[nextIndex].classList.add('next');
-        }
+  const totalItems = wrappers.length;
+  const prevIndex = (currentIndex - 1 + totalItems) % totalItems;
+  const nextIndex = (currentIndex + 1) % totalItems;
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % wrappers.length;
-            updateCarousel();
-        });
+  wrappers[currentIndex].classList.add("active");
+  wrappers[prevIndex].classList.add("prev");
+  wrappers[nextIndex].classList.add("next");
+}
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length;
-            updateCarousel();
-        });
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % wrappers.length;
+  updateCarousel();
+});
 
-        // Inicializar el carrusel al cargar la página
-        updateCarousel();
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length;
+  updateCarousel();
+});
+
+// Inicializar el carrusel al cargar la página
+updateCarousel();

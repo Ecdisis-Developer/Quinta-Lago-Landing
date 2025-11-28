@@ -533,7 +533,17 @@ iframe {
 }
 
 .cc-izq {
-    margin: 100px 0 0 0;
+    background-image: 
+    url('../imagenes/circulos/circulo-blanco-grande.webp'),
+    url('../imagenes/img-carrusel/elipses/elipse-naranja-izq.webp');
+    background-position: 
+    calc(100% - 20%) 20px,
+    center;
+    background-repeat: 
+    no-repeat,
+    no-repeat;
+    margin: 0 -200px 0 0;
+    height: 150%;
 }
 
 .carousel-container {
@@ -554,6 +564,7 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     transition: all 0.5s ease-in-out;
     opacity: 0;
     /* Por defecto ocultamos los que no sean active/prev/next */
@@ -614,14 +625,18 @@ iframe {
 .carousel-wrapper.active {
     opacity: 1;
     z-index: 10;
-    transform: translateX(0) scale(1.3);
+    transform: translateX(0%) scale(1.3);
     /* Más grande */
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: 50%;
     margin: 0 auto;
     /* Centrado absoluto */
     pointer-events: auto;
     /* Permite clics si el círculo central fuera un enlace */
+}
+
+.carousel-wrapper.active .carousel-text{
+    display: block;
 }
 
 .carousel-wrapper.active .carousel-item {
@@ -642,7 +657,7 @@ iframe {
 .carousel-wrapper.prev {
     opacity: 1;
     z-index: 5;
-    transform: translateX(-140%) scale(0.9);
+    transform: translateX(-150%) scale(0.9);
     /* Hacia la izquierda y un poco más pequeño */
     left: 50%;
     /* Referencia desde el centro */
@@ -698,12 +713,12 @@ iframe {
 }
 
 .nav-btn.prev-btn {
-    left: 32%;
+    left: 37%;
     /* Ajusta esta posición para que quede entre el centro y la izq */
 }
 
 .nav-btn.next-btn {
-    right: 32%;
+    right: 37%;
     /* Ajusta esta posición para que quede entre el centro y la der */
 }
 
@@ -840,12 +855,16 @@ iframe {
 }
 
 .cc-der {
-    margin: -200px 0 0 0;
+    background-image: url('../imagenes/img-carrusel/elipses/elipse-azul-der.webp');
+    background-position: calc(10% - -50%) center;
+    background-repeat: no-repeat;
+    margin-top: -450px;
+    margin-left: -250px;
 }
-
 
 .contenedor-clientes{
     font-size: var(--h1);
+    padding: 100px 0 100px 0;
 }
 
 .contacto{
@@ -855,7 +874,6 @@ iframe {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0;
-    border: 1px solid red;
 }
 
 .contacto-texto h1{
@@ -922,7 +940,7 @@ textarea{
     font-size: var(--texto-general);
 }
 
-button {
+.send{
     padding: 15px;
     background-color: var(--naranja);
     color: white;
@@ -936,7 +954,7 @@ button {
     font-size: var(--texto-general);
 }
 
-button:hover {
+.send:hover {
     background-color: #e58464;
 }
 
@@ -1160,4 +1178,84 @@ usarías un estilo adicional para 'center-item'.
 .branding-column {
     display: grid;
     place-items: center;
+}
+
+
+
+.carouselClientes{
+    width: 100%; /* Ancho del carrusel, ajustable */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra los botones verticalmente con el track */
+    padding: 20px 0; /* Padding vertical para que los logos no estén pegados al borde */
+}
+
+.carousel-track-container {
+    overflow: hidden; /* ¡Clave! Oculta las imágenes que están fuera de vista */
+    width: 70%;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Suaviza el desplazamiento */
+}
+
+.Citem {
+    
+    margin: 0 20px; /* Espacio horizontal entre los logos */
+}
+
+.Citem img {
+    width: 100%;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen si es más pequeña que su contenedor */
+    opacity: 0.7; /* Ligeramente transparentes, como en el ejemplo */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.Citem img:hover {
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+}
+
+.carousel-button{
+    background-color: transparent;
+    outline: none;
+    border: 0;
+
+}
+
+.carousel-button i{
+    font-size: 70px; /* Tamaño de los iconos de flecha */
+    color: #36aee0; /* Color de las flechas */
+    cursor: pointer;
+    padding: 0 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.carousel-button:hover {
+    color: #2a8bbb; /* Color más oscuro al pasar el ratón */
+}
+
+/* Opcional: Media queries para ajustar el número de items visibles en pantallas pequeñas */
+@media (max-width: 1024px) {
+    .Citem {
+        flex: 0 0 calc(100% / 5); /* 5 items en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .Citem {
+        flex: 0 0 calc(100% / 3); /* 3 items en móviles */
+    }
+    .carousel-button {
+        font-size: 2em;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 2); /* 2 items en móviles pequeños */
+    }
 }

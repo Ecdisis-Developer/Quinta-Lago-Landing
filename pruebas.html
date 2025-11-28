@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrusel de Logos</title>
+    <title>Carrusel de Clientes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/TU_CODIGO_UNICO.js" crossorigin="anonymous"></script> 
     <style>
         body {
     font-family: Arial, sans-serif;
@@ -11,157 +13,213 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     margin: 0;
 }
 
-/* Contenedor Principal del Carrusel */
 .carousel-container {
-    display: flex;
-    align-items: center;
-    width: 90%; /* Ancho total del carrusel */
-    max-width: 1200px;
+    width: 90%; /* Ancho del carrusel, ajustable */
+    max-width: 1200px; /* Máximo ancho para escritorios */
     position: relative;
-    background-color: white; /* Fondo blanco como en tu imagen */
-    padding: 20px 0;
+    display: flex;
+    align-items: center; /* Centra los botones verticalmente con el track */
+    background-color: white;
+    padding: 20px 0; /* Padding vertical para que los logos no estén pegados al borde */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Botones de Navegación */
+.carousel-track-container {
+    flex-grow: 1; /* Permite que ocupe el espacio restante entre los botones */
+    overflow: hidden; /* ¡Clave! Oculta las imágenes que están fuera de vista */
+    margin: 0 10px; /* Espacio entre el track y los botones */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Suaviza el desplazamiento */
+}
+
+.carousel-item {
+    flex: 0 0 calc(100% / 7); /* Cada item ocupa 1/7 del ancho del track-container */
+    min-width: 0; /* Permite que flex-basis funcione correctamente */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    padding: 0 15px; /* Espacio horizontal entre los logos */
+    text-align: center; /* Para centrar la imagen dentro de su espacio */
+}
+
+.carousel-item img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Elimina espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen si es más pequeña que su contenedor */
+    opacity: 0.7; /* Ligeramente transparentes, como en el ejemplo */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-item img:hover {
+    opacity: 1; /* Opacidad completa al pasar el ratón */
+}
+
 .carousel-button {
-    background-color: #00bfff; /* Color azul claro de las flechas */
-    color: white;
+    background-color: transparent;
     border: none;
-    padding: 10px 15px;
-    font-size: 2em;
+    font-size: 2.5em; /* Tamaño de los iconos de flecha */
+    color: #36aee0; /* Color de las flechas */
     cursor: pointer;
-    border-radius: 50%; /* Flechas circulares */
-    line-height: 1; /* Para centrar el texto '<' '>' */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-    z-index: 10; /* Asegura que estén por encima de los logos */
-    margin: 0 10px; /* Espacio a los lados */
+    padding: 0 15px;
+    outline: none; /* Elimina el contorno al hacer click */
+    transition: color 0.3s ease-in-out;
 }
 
 .carousel-button:hover {
-    background-color: #0099e6; /* Un tono más oscuro al pasar el ratón */
+    color: #2a8bbb; /* Color más oscuro al pasar el ratón */
 }
 
-/* Contenedor del Track (donde se mueven los logos) */
-.carousel-track-container {
-    width: calc(100% - 120px); /* Ancho del track, dejando espacio para los botones */
-    overflow: hidden; /* CLAVE: Oculta los logos que están fuera de vista */
-    position: relative;
+/* Opcional: Media queries para ajustar el número de items visibles en pantallas pequeñas */
+@media (max-width: 1024px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 5); /* 5 items en tablets */
+    }
 }
 
-/* Lista de Logos (el "track" que se desplaza) */
-.carousel-track {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+@media (max-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 3); /* 3 items en móviles */
+    }
+    .carousel-button {
+        font-size: 2em;
+        padding: 0 10px;
+    }
 }
 
-/* Cada Logo Individual */
-.carousel-slide {
-    min-width: 200px; /* Ancho de cada logo/slide */
-    flex-shrink: 0; /* Evita que los logos se encojan */
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    box-sizing: border-box; /* Para incluir padding en min-width */
+@media (max-width: 480px) {
+    .carousel-item {
+        flex: 0 0 calc(100% / 2); /* 2 items en móviles pequeños */
+    }
 }
 
-.carousel-slide img {
-    max-width: 100%; /* Ajusta el tamaño del logo a su contenedor */
-    max-height: 80px; /* Altura máxima para los logos */
-    opacity: 0.6; /* Un poco de transparencia para el efecto gris */
-    filter: grayscale(100%); /* Desaturar la imagen a blanco y negro */
-    transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-/* Opcional: Hacer el logo activo o central más visible */
-.carousel-slide img:hover {
-    opacity: 1;
-    filter: grayscale(0%); /* Color al pasar el ratón */
-}
     </style>
 </head>
 <body>
 
     <div class="carousel-container">
-        <button class="carousel-button prev" aria-label="Anterior">‹</button>
+        <button class="carousel-button prev">&#10094;</button>
         <div class="carousel-track-container">
-            <ul class="carousel-track">
-                <li class="carousel-slide"><img src="logos/cimmyt.png" alt="Logo CIMMYT"></li>
-                <li class="carousel-slide"><img src="logos/royal-prestige.png" alt="Logo Royal Prestige"></li>
-                <li class="carousel-slide"><img src="logos/chapingo.png" alt="Logo Universidad Chapingo"></li>
-                <li class="carousel-slide"><img src="logos/uvm.png" alt="Logo UVM"></li>
-                <li class="carousel-slide"><img src="logos/oxo.png" alt="Logo OXXO"></li>
-                <li class="carousel-slide"><img src="logos/mexiquense.png" alt="Logo Circuito Exterior Mexiquense"></li>
-                <li class="carousel-slide"><img src="logos/ado.png" alt="Logo ADO"></li>
-                <li class="carousel-slide"><img src="logos/cimmyt.png" alt="Logo CIMMYT"></li>
-                <li class="carousel-slide"><img src="logos/royal-prestige.png" alt="Logo Royal Prestige"></li>
-            </ul>
+            <div class="carousel-track">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=CIMMYT" alt="CIMMYT">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=ROYAL%20PRESTIGE" alt="ROYAL PRESTIGE">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=CHAPINGO" alt="CHAPINGO">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=UVM" alt="UVM">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=OXXO" alt="OXXO">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=CEM" alt="CEM">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=ADO" alt="ADO">
+                
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+8" alt="Cliente 8">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+9" alt="Cliente 9">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+10" alt="Cliente 10">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+11" alt="Cliente 11">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+12" alt="Cliente 12">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+13" alt="Cliente 13">
+                <img class="carousel-item" src="https://via.placeholder.com/150x80/cccccc/ffffff?text=Cliente+14" alt="Cliente 14">
+            </div>
         </div>
-        <button class="carousel-button next" aria-label="Siguiente">›</button>
+        <button class="carousel-button next">&#10095;</button>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.carousel-button.next');
+    const items = Array.from(track.children);
     const prevButton = document.querySelector('.carousel-button.prev');
+    const nextButton = document.querySelector('.carousel-button.next');
 
-    // Asumimos que todos los slides tienen el mismo ancho
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    let currentSlideIndex = 0; // Para llevar la cuenta del slide visible
+    let itemsVisible = 7; 
+    let currentIndex = 0; 
+    const autoScrollInterval = 3000; // 3 segundos para el movimiento automático
+    let autoScrollTimer; 
 
-    // Configurar la posición inicial del track
-    // Para ver los primeros logos, empezamos en 0
-    track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
-
-    // Función para mover el carrusel
-    const moveToSlide = (targetIndex) => {
-        // Calcular cuántos slides deben ser visibles en el viewport
-        // Esto depende del ancho del .carousel-track-container y slideWidth
-        const visibleSlides = Math.floor(track.parentElement.offsetWidth / slideWidth);
-
-        // Limitar el índice para que no se desborde al final
-        // Esto evita que se muestren espacios vacíos si no hay suficientes slides
-        if (targetIndex > slides.length - visibleSlides) {
-            targetIndex = slides.length - visibleSlides;
+    // Ajusta el número de items visibles según el tamaño de la pantalla
+    const adjustItemsVisible = () => {
+        if (window.innerWidth <= 480) {
+            itemsVisible = 2;
+        } else if (window.innerWidth <= 768) {
+            itemsVisible = 3;
+        } else if (window.innerWidth <= 1024) {
+            itemsVisible = 5;
+        } else {
+            itemsVisible = 7;
         }
-        if (targetIndex < 0) {
-            targetIndex = 0;
-        }
-        
-        currentSlideIndex = targetIndex;
-        track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+        updateCarousel(); // Actualiza la vista si cambia el número de items visibles
     };
 
-    // Event listener para el botón "Siguiente"
+    // Actualiza la posición del carrusel y el estado de los botones
+    const updateCarousel = () => {
+        const itemWidth = items[0].offsetWidth; 
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex >= items.length - itemsVisible;
+    };
+    
+    // Función para avanzar al siguiente slide (con bucle)
+    const moveToNextSlide = () => {
+        if (currentIndex < items.length - itemsVisible) {
+            currentIndex++;
+        } else {
+            // Vuelve al principio si llega al final
+            currentIndex = 0; 
+        }
+        updateCarousel();
+    };
+
+    // Inicia el movimiento automático
+    const startAutoScroll = () => {
+        clearInterval(autoScrollTimer); // Limpia cualquier temporizador previo
+        autoScrollTimer = setInterval(moveToNextSlide, autoScrollInterval);
+    };
+
+    // Detiene el movimiento automático
+    const stopAutoScroll = () => {
+        clearInterval(autoScrollTimer);
+    };
+
+    // --- EVENT LISTENERS ---
+    
+    // Inicia el movimiento automático al cargar
+    startAutoScroll(); 
+
+    // Navegación manual con botón "Siguiente"
     nextButton.addEventListener('click', () => {
-        moveToSlide(currentSlideIndex + 1);
+        stopAutoScroll(); 
+        if (currentIndex < items.length - itemsVisible) {
+            currentIndex++;
+            updateCarousel();
+        }
+        startAutoScroll(); // Reanuda después de la interacción
     });
 
-    // Event listener para el botón "Anterior"
+    // Navegación manual con botón "Anterior"
     prevButton.addEventListener('click', () => {
-        moveToSlide(currentSlideIndex - 1);
+        stopAutoScroll();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+        startAutoScroll(); // Reanuda después de la interacción
     });
+    
+    // Detener el scroll automático cuando el ratón está sobre el carrusel
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', stopAutoScroll);
+    carouselContainer.addEventListener('mouseleave', startAutoScroll);
 
-    // Opcional: Ajustar el carrusel si la ventana cambia de tamaño
-    window.addEventListener('resize', () => {
-        // Recalcular el slideWidth en caso de ser necesario
-        // (aunque en este caso, min-width lo mantiene fijo)
-        // También recalcular visibleSlides
-        moveToSlide(currentSlideIndex); // Reajusta la posición
-    });
-});</script>
+
+    // Ajustar al cargar la página y al redimensionar la ventana
+    adjustItemsVisible();
+    window.addEventListener('resize', adjustItemsVisible);
+});
+
+    </script>
 </body>
 </html>
