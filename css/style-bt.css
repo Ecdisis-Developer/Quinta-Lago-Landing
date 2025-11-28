@@ -848,3 +848,21 @@ iframe {
 .contenedor-clientes{
     font-size: var(--h1);
 }
+
+.contacto{
+    background-image: url('../imagenes/footer/EQUIPO.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contacto-texto h1{
+    font-size: 100px;
+    line-height: 1;
+}
+
+.formulario{
+    background-color: var(--azul);
+    display: block;
+}
