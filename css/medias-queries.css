@@ -1,0 +1,121 @@
+@media (max-width: 480px) {
+  .slider {
+    display: flex;
+    width: 300%;
+    /* 3 imágenes, así que 300% */
+    height: 40%;
+    transition: transform 0.5s ease-in-out;
+    padding-bottom: 1500px;
+}
+
+.slide-1 {
+    background-image:
+        url('../imagenes/banners/text-tb-1.webp'),
+        url('../imagenes/banners/persona-1.webp'),
+        url('../imagenes/banners/banner-teambuilding-1.webp'),
+        url('../imagenes/banners/banner-1.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        200% center,
+        calc(10% - 30%);
+    background-size:
+        25%,
+        20%,
+        cover,
+        cover;
+}
+
+
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .slider {
+    display: flex;
+    width: 300%;
+    /* 3 imágenes, así que 300% */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    padding-bottom: 1500px;
+}
+
+/* Cada slide */
+.slide {
+    width: 100%;
+}
+
+.slide-1 {
+    background-image:
+        url('../imagenes/banners/text-tb-1.webp'),
+        url('../imagenes/banners/persona-1.webp'),
+        url('../imagenes/banners/banner-teambuilding-1.webp'),
+        url('../imagenes/banners/banner-1.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+
+.slide-2 {
+    background-image:
+        url('../imagenes/banners/text-tb-2.webp'),
+        url('../imagenes/banners/persona-2.webp'),
+        url('../imagenes/banners/banner-teambuilding-2.webp'),
+        url('../imagenes/banners/banner-2.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+
+.slide-3 {
+    background-image:
+        url('../imagenes/banners/text-tb-3.webp'),
+        url('../imagenes/banners/persona-3.webp'),
+        url('../imagenes/banners/banner-teambuilding-3.webp'),
+        url('../imagenes/banners/banner-3.webp');
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat;
+    background-position:
+        30% center,
+        left bottom,
+        0 center,
+        180% center;
+    background-size:
+        25%,
+        20%,
+        auto,
+        80%;
+}
+}

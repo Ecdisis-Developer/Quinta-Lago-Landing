@@ -1000,16 +1000,15 @@ textarea{
     text-decoration: none
 }
 
-#social a .google-bubble
-{
+#social a .google-bubble {
   background:#f7f7f7;
   text-decoration:none;
   vertical-align:baseline;
   border:0;
   cursor:auto
 }
-#social .google-bubble
-{
+
+#social .google-bubble {
   padding-top: 10px;
   text-align:center;
   background-color:#f7f7f7;
@@ -1022,8 +1021,7 @@ textarea{
   border-bottom-right-radius:15px
 }
 
-#social .google-bubble:hover
-{
+#social .google-bubble:hover {
   transition:all .1s linear;
   -webkit-transition:all .1s linear;
   width:60px
@@ -1072,7 +1070,6 @@ i {
     /* Ajusta el tamaño del ícono (esto es para los emojis de marcador de posición) */
     font-size: 25px; 
     /* Color blanco para los íconos (si usas SVGs o imágenes, el color se cambia en el archivo/código del ícono) */
-    
 }
 
 /* 5. Estilo Específico del Ítem Central */
@@ -1180,8 +1177,6 @@ usarías un estilo adicional para 'center-item'.
     place-items: center;
 }
 
-
-
 .carouselClientes{
     width: 100%; /* Ancho del carrusel, ajustable */
     position: relative;
@@ -1222,7 +1217,6 @@ usarías un estilo adicional para 'center-item'.
     background-color: transparent;
     outline: none;
     border: 0;
-
 }
 
 .carousel-button i{
