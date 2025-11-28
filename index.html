@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="OwlCarousel2-2.3.4/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="OwlCarousel2-2.3.4/owl.carousel.min.css">
     <link rel="shortcut icon" href="imagenes/icon-qlt.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="js/slider-principal.js" defer></script>
     <script src="js/carrusel-QLT.js" defer></script>
 </head>
@@ -186,7 +187,7 @@
                     <div class="carousel-item">
                         <img src="imagenes/img-carrusel/imagen-carrusel-1.webp" alt="Imagen 1">
                     </div>
-                    <p class="carousel-text">Más de una década creando experiencias  efectivas de integración</p>
+                    <p class="carousel-text">Más de una década creando experiencias efectivas de integración</p>
                 </div>
 
                 <div class="carousel-wrapper">
@@ -217,27 +218,77 @@
         <h1>Nuestros <span class="azul">clientes</span></h1>
     </main>
 
+    <div id="social">
+        <a title="Google Maps" href="https://maps.app.goo.gl/MsK832VvN9tZ8jtf9" class="google-bubble" target="_blank">
+            <img src="imagenes/google-maps-logo.webp" width="18" height="25"></a>
+    </div>
+
     <footer>
         <div class="contacto">
             <div class="contacto-texto">
-                <h1>Da el <span class="azul">paso</span> <br> hacia un <br> <span class="naranja">equipo más <br> fuerte</span></h1>
+                <h1>Da el <span class="azul">paso</span> <br> hacia un <br> <span class="naranja">equipo más <br>
+                        fuerte</span></h1>
+                <p>Haz que tu equipo viva una experiencia que transformará su <br> manera de trabajar y comunicarse.
+                    Contáctanos para recibir tu <br> cotización personalizada y asegura.</p>
             </div>
             <div class="formulario">
                 <form action="">
-                    <label for="Nombre">Nombre:
-                    <input type="text" name="name"></label>
-                    <label for="Teléfono">Teléfono:
-                    <input type="tel" name="phone"></label>
-                    <label for="CorreoElectrónico">Correo Electrónico:
-                    <input type="mail" name="mail"></label>
-                    <label for="Mensaje">Mnesaje Adicional:
-                    <textarea name="message" id=""></textarea></label>
+                    <label for="name">Nombre:
+                        <input type="text" name="name" class="name" id="name"></label>
+                    <label for="phone">Teléfono:
+                        <input type="tel" name="phone" class="phone" id="phone"></label>
+                    <label for="email">Correo Electrónico:
+                        <input type="email" name="email" class="email" id="email"></label>
+                    <label for="message">Mensaje Adicional:
+                        <textarea name="message" id="message"></textarea></label>
+                    <button type="submit">Envíar</button>
                 </form>
             </div>
-
         </div>
-        <div class="footer">
 
+        <div class="footer-container">
+            <div class="footer-item">
+                <a href="https://www.youtube.com/@quintadelagotexcoco6770" target="_blank" title="Youtube de Quinta de Lago Texcoco" alt="Youtube de Quinta de Lago">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="https://www.facebook.com/quintalagotexcoco/" target="_blank" title="Facebook de Quinta de Lago Texcoco" alt="Facebook de Quinta de Lago">
+                    <i class="fa-brands fa-square-facebook"></i>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="https://www.instagram.com/quintadelagotexcoco/" target="_blank" title="Instagram de Quinta de Lago" alt="Instagram de Quinta de Lago">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            <div class="footer-item">
+                <a href="https://www.bodas.com.mx/jardines-para-bodas/quinta-lago-texcoco--e114038" target="_blank">
+                    <i class="fa-solid fa-heart"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="main-footer">
+            <div class="footer-content">
+                <div class="info-column address">
+                    <h3>Encuéntranos</h3>
+                    <a href="https://maps.app.goo.gl/gkZMCU5F9EoERqQt7" target="_blank">Calle Morelos No. 128,<br>San Luis Huexotla,<br>Texcoco, Estado de México</a>
+                </div>
+
+                <div class="info-column contact">
+                    <h3>Contacto</h3>
+                    <a href="https://api.whatsapp.com/send?phone=525630917711" target="_blank">WhatsApp: 55 30 81 77 11</a>
+                    <a href="tel:5959284716">Teléfono: 595 92 84 716</a>
+                    <a href="tel:5959285997">Teléfono: 595 92 85 997</a>
+                    <a href="mailto:ventas@qlt.com.mx">Email: ventas@qlt.com.mx</a>
+                </div>
+
+                <div class="branding-column">
+                    <a href="https://www.quintalagotexcoco.com.mx" target="_blank"><img src="imagenes/logo-quinta-de-lago-footer.webp" alt=""></a>
+                    <a href="https://www.quintalagotexcoco.com.mx/team-building" target="_blank"><img src="imagenes/Team-Building-foot-logo.webp" alt=""></a>
+                </div>
+            </div>
         </div>
     </footer>
 

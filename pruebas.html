@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Logos</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Contenedor Principal del Carrusel */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    width: 90%; /* Ancho total del carrusel */
+    max-width: 1200px;
+    position: relative;
+    background-color: white; /* Fondo blanco como en tu imagen */
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Botones de Navegación */
+.carousel-button {
+    background-color: #00bfff; /* Color azul claro de las flechas */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 50%; /* Flechas circulares */
+    line-height: 1; /* Para centrar el texto '<' '>' */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 10; /* Asegura que estén por encima de los logos */
+    margin: 0 10px; /* Espacio a los lados */
+}
+
+.carousel-button:hover {
+    background-color: #0099e6; /* Un tono más oscuro al pasar el ratón */
+}
+
+/* Contenedor del Track (donde se mueven los logos) */
+.carousel-track-container {
+    width: calc(100% - 120px); /* Ancho del track, dejando espacio para los botones */
+    overflow: hidden; /* CLAVE: Oculta los logos que están fuera de vista */
+    position: relative;
+}
+
+/* Lista de Logos (el "track" que se desplaza) */
+.carousel-track {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animación de desplazamiento */
+}
+
+/* Cada Logo Individual */
+.carousel-slide {
+    min-width: 200px; /* Ancho de cada logo/slide */
+    flex-shrink: 0; /* Evita que los logos se encojan */
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box; /* Para incluir padding en min-width */
+}
+
+.carousel-slide img {
+    max-width: 100%; /* Ajusta el tamaño del logo a su contenedor */
+    max-height: 80px; /* Altura máxima para los logos */
+    opacity: 0.6; /* Un poco de transparencia para el efecto gris */
+    filter: grayscale(100%); /* Desaturar la imagen a blanco y negro */
+    transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Opcional: Hacer el logo activo o central más visible */
+.carousel-slide img:hover {
+    opacity: 1;
+    filter: grayscale(0%); /* Color al pasar el ratón */
+}
+    </style>
+</head>
+<body>
+
+    <div class="carousel-container">
+        <button class="carousel-button prev" aria-label="Anterior">‹</button>
+        <div class="carousel-track-container">
+            <ul class="carousel-track">
+                <li class="carousel-slide"><img src="logos/cimmyt.png" alt="Logo CIMMYT"></li>
+                <li class="carousel-slide"><img src="logos/royal-prestige.png" alt="Logo Royal Prestige"></li>
+                <li class="carousel-slide"><img src="logos/chapingo.png" alt="Logo Universidad Chapingo"></li>
+                <li class="carousel-slide"><img src="logos/uvm.png" alt="Logo UVM"></li>
+                <li class="carousel-slide"><img src="logos/oxo.png" alt="Logo OXXO"></li>
+                <li class="carousel-slide"><img src="logos/mexiquense.png" alt="Logo Circuito Exterior Mexiquense"></li>
+                <li class="carousel-slide"><img src="logos/ado.png" alt="Logo ADO"></li>
+                <li class="carousel-slide"><img src="logos/cimmyt.png" alt="Logo CIMMYT"></li>
+                <li class="carousel-slide"><img src="logos/royal-prestige.png" alt="Logo Royal Prestige"></li>
+            </ul>
+        </div>
+        <button class="carousel-button next" aria-label="Siguiente">›</button>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-button.next');
+    const prevButton = document.querySelector('.carousel-button.prev');
+
+    // Asumimos que todos los slides tienen el mismo ancho
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    let currentSlideIndex = 0; // Para llevar la cuenta del slide visible
+
+    // Configurar la posición inicial del track
+    // Para ver los primeros logos, empezamos en 0
+    track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+
+    // Función para mover el carrusel
+    const moveToSlide = (targetIndex) => {
+        // Calcular cuántos slides deben ser visibles en el viewport
+        // Esto depende del ancho del .carousel-track-container y slideWidth
+        const visibleSlides = Math.floor(track.parentElement.offsetWidth / slideWidth);
+
+        // Limitar el índice para que no se desborde al final
+        // Esto evita que se muestren espacios vacíos si no hay suficientes slides
+        if (targetIndex > slides.length - visibleSlides) {
+            targetIndex = slides.length - visibleSlides;
+        }
+        if (targetIndex < 0) {
+            targetIndex = 0;
+        }
+        
+        currentSlideIndex = targetIndex;
+        track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+    };
+
+    // Event listener para el botón "Siguiente"
+    nextButton.addEventListener('click', () => {
+        moveToSlide(currentSlideIndex + 1);
+    });
+
+    // Event listener para el botón "Anterior"
+    prevButton.addEventListener('click', () => {
+        moveToSlide(currentSlideIndex - 1);
+    });
+
+    // Opcional: Ajustar el carrusel si la ventana cambia de tamaño
+    window.addEventListener('resize', () => {
+        // Recalcular el slideWidth en caso de ser necesario
+        // (aunque en este caso, min-width lo mantiene fijo)
+        // También recalcular visibleSlides
+        moveToSlide(currentSlideIndex); // Reajusta la posición
+    });
+});</script>
+</body>
+</html>
