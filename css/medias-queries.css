@@ -1,121 +1,206 @@
 @media (max-width: 480px) {
-  .slider {
-    display: flex;
-    width: 300%;
-    /* 3 imágenes, así que 300% */
-    height: 40%;
-    transition: transform 0.5s ease-in-out;
-    padding-bottom: 1500px;
-}
+    :root {
+        --h1-celular: 25px;
+        --h2-celular: 30px;
+        --h3-celular: 16px;
+        --texto-general-celular: 14;
+    }
 
-.slide-1 {
-    background-image:
-        url('../imagenes/banners/text-tb-1.webp'),
-        url('../imagenes/banners/persona-1.webp'),
-        url('../imagenes/banners/banner-teambuilding-1.webp'),
-        url('../imagenes/banners/banner-1.webp');
-    background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat;
-    background-position:
-        30% center,
-        left bottom,
-        200% center,
-        calc(10% - 30%);
-    background-size:
-        25%,
-        20%,
-        cover,
-        cover;
-}
+    header {
+        height: 310px;
+    }
+
+    h1 {
+        font-size: var(--h1-celular);
+    }
 
 
-}
+    .slide-1 {
 
+        background-position:
+            20% center,
+            left bottom,
+            250% center,
+            center;
+        background-size:
+            25%,
+            20%,
+            cover,
+            cover;
+    }
 
-@media (min-width: 481px) and (max-width: 767px) {
-  .slider {
-    display: flex;
-    width: 300%;
-    /* 3 imágenes, así que 300% */
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-    padding-bottom: 1500px;
-}
+    .slide-2 {
+        background-position:
+            20% center,
+            left bottom,
+            250% center,
+            center;
+        background-size:
+            25%,
+            20%,
+            cover,
+            cover;
+    }
 
-/* Cada slide */
-.slide {
-    width: 100%;
-}
+    .slide-3 {
+        background-position:
+            20% center,
+            left bottom,
+            250% center,
+            center;
+        background-size:
+            25%,
+            20%,
+            cover,
+            cover;
+    }
 
-.slide-1 {
-    background-image:
-        url('../imagenes/banners/text-tb-1.webp'),
-        url('../imagenes/banners/persona-1.webp'),
-        url('../imagenes/banners/banner-teambuilding-1.webp'),
-        url('../imagenes/banners/banner-1.webp');
-    background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat;
-    background-position:
-        30% center,
-        left bottom,
-        0 center,
-        180% center;
-    background-size:
-        25%,
-        20%,
-        auto,
-        80%;
-}
+    h1 {
+        font-size: var(--h1-celular);
+    }
 
-.slide-2 {
-    background-image:
-        url('../imagenes/banners/text-tb-2.webp'),
-        url('../imagenes/banners/persona-2.webp'),
-        url('../imagenes/banners/banner-teambuilding-2.webp'),
-        url('../imagenes/banners/banner-2.webp');
-    background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat;
-    background-position:
-        30% center,
-        left bottom,
-        0 center,
-        180% center;
-    background-size:
-        25%,
-        20%,
-        auto,
-        80%;
-}
+    .contenedor-principal {
+        background-position:
+            calc(50% - 30%) 90%,
+            calc(20% - 5%) 33%,
+            calc(90% - -15%) 17%;
+        background-size:
+            auto,
+            40%,
+            40%;
+        display: block;
+    }
 
-.slide-3 {
-    background-image:
-        url('../imagenes/banners/text-tb-3.webp'),
-        url('../imagenes/banners/persona-3.webp'),
-        url('../imagenes/banners/banner-teambuilding-3.webp'),
-        url('../imagenes/banners/banner-3.webp');
-    background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat,
-        no-repeat;
-    background-position:
-        30% center,
-        left bottom,
-        0 center,
-        180% center;
-    background-size:
-        25%,
-        20%,
-        auto,
-        80%;
-}
+    .pc-texto {
+        text-align: center;
+        transform: translateX(0);
+        padding: 0 20px;
+    }
+
+    .pc-texto p {
+        font-size: var(--texto-general-celular);
+        font-weight: lighter;
+        width: 100%;
+        text-align: center;
+    }
+
+    .circulo-pequeño {
+        width: 10%;
+        padding: 10px 0;
+    }
+
+    iframe {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .pc-imagenes {
+        background-size: contain;
+        transform: translateX(0);
+    }
+
+    .primera {
+        z-index: 0;
+        width: 80%;
+    }
+
+    .segunda {
+        z-index: 1;
+        margin: -20px 50px 0 0;
+        width: 80%;
+
+    }
+
+    .tercera {
+        z-index: 2;
+        margin: -20px -50px 0 0;
+        width: 80%;
+    }
+
+    .contenedor-circulos-iconos {
+        display: block;
+        text-align: center;
+        justify-content: center;
+        transform: translateX(0);
+    }
+
+    .cont-azul {
+        background-color: var(--azul);
+        border-radius: 50%;
+        width: 55%;
+        height: 100px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        opacity: 0.5;
+    }
+
+    .cont-azul img {
+        width: 20%;
+    }
+
+    .cont-azul h3 {
+        font-size: var(--h3-celular);
+    }
+
+    .cont-naranja {
+        background-color: var(--naranja);
+        border-radius: 100%;
+        width: 50%;
+        height: 100px;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        opacity: 0.8;
+    }
+
+    .cont-naranja img {
+        width: 20%;
+    }
+
+    .cont-naranja h3 {
+        font-size: var(--h3-celular);
+    }
+
+    .segundo-contenedor {
+        padding: 0 20px;
+    }
+
+    .segundo-contenedor p {
+        font-size: var(--texto-general-celular);
+    }
+
+    .sub-contenedor {
+        display: block;
+        grid-template-columns: 1fr 1fr;
+        /* 2 columnas del mismo tamaño */
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cont-izq p {
+        transform: translateX(0);
+    }
+
+    .texto-circulos {
+        background-position:
+            calc(50% - 20%) 100%,
+            calc(10% - -120%),
+            calc(50% - 60%);
+        background-size:
+            40%,
+            80%,
+            75%;
+        padding: 50px 0 50px 0;
+    }
+
+    .texto-circulos h1 {
+        color: var(--blanco);
+        font-size: 45px;
+        line-height: 1;
+    }
 }
